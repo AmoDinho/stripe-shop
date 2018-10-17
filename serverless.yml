@@ -32,3 +32,12 @@ functions:
       - http:
           path: hello
           method: get
+
+  billing:
+    handler: billing.main
+    events: 
+      - http:
+          path: billing
+          method: provider
+          cors: true
+          authorizer: aws_iam
